@@ -1,0 +1,16 @@
+{
+  "item.xp_hearts.amulet_of_keeping": "Amulet of Keeping",
+  "item.xp_hearts.amulet_of_wisdom": "Amulet of Wisdom",
+  "item.xp_hearts.pendant_of_keeping": "Pendant of Keeping",
+  "item.xp_hearts.pendant_of_wisdom": "Pendant of Wisdom",
+  "category.xp_hearts": "XP Hearts",
+  "config.xp_hearts.title": "XP Hearts Config",
+  "config.xp_hearts.general": "General",
+  "config.xp_hearts.amulet_of_keeping": "Amulet of Keeping Enabled",
+  "config.xp_hearts.pvp_xp_transfer": "PvP XP Transfer",
+  "config.xp_hearts.amulet_of_wisdom": "Amulet of Wisdom Enabled",
+  "config.xp_hearts.xp_drop_multiplier": "XP Drop Multiplier",
+  "config.xp_hearts.xp_hearts_enabled": "XP Hearts Enabled",
+  "config.xp_hearts.levels_per_heart": "Levels per Heart",
+  "config.xp_hearts.hp_per_heart": "HP per Heart"
+}

@@ -1,0 +1,45 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "GNU GPL 3.0"
+
+[[mods]]
+modId = "xp_hearts"
+version = "${version}"
+displayName = "xp_hearts"
+authors = "linkedto"
+description = '''
+XP based health and item keeps on death using amulets.
+'''
+#logoFile = ""
+
+[[dependencies.xp_hearts]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.xp_hearts]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.xp_hearts]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.11,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.xp_hearts]]
+modId = "curios"
+type = "required"
+versionRange = "[9.2.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "xp_hearts.mixins.json"

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "oco",
+    "cec",
+    "oco"
+  ],
+  "key": {
+    "o": {
+      "id": "minecraft:obsidian"
+    },
+    "c": {
+      "id": "minecraft:crying_obsidian"
+    },
+    "e": {
+      "id": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "id": "xp_hearts:pendant_of_keeping"
+  }
+}

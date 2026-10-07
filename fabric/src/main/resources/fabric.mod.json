@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "xp_hearts",
+  "version": "${version}",
+  "name": "xp_hearts",
+  "description": "XP based health and item keeps on death using amulets.",
+  "authors": [
+    "linkedto"
+  ],
+  "contact": {
+    "homepage": "https://github.com/linked3/linked-hearts"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/xp_hearts/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.linkedto.xp_hearts.fabric.XpHeartsFabric"
+    ],
+    "client": [
+      "net.linkedto.xp_hearts.fabric.client.XpHeartsFabricClient"
+    ]
+  },
+  "mixins": [
+    "xp_hearts.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.11",
+    "fabric-api": "*",
+    "trinkets": ">=3.10.0"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

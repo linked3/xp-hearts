@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "i i",
+    "ipi"
+  ],
+  "key": {
+    "i": {
+      "id": "minecraft:iron_nugget"
+    },
+    "p": {
+      "id": "xp_hearts:pendant_of_keeping"
+    }
+  },
+  "result": {
+    "id": "xp_hearts:amulet_of_keeping"
+  }
+}

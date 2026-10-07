@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "b b",
+    "bpb"
+  ],
+  "key": {
+    "b": {
+      "id": "minecraft:blue_wool"
+    },
+    "p": {
+      "id": "xp_hearts:pendant_of_wisdom"
+    }
+  },
+  "result": {
+    "id": "xp_hearts:amulet_of_wisdom"
+  }
+}
