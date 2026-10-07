@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "glg",
+    "lel",
+    "glg"
+  ],
+  "key": {
+    "g": {
+      "id": "minecraft:gold_ingot"
+    },
+    "l": {
+      "id": "minecraft:lapis_lazuli"
+    },
+    "e": {
+      "id": "minecraft:echo_shard"
+    }
+  },
+  "result": {
+    "id": "xp_hearts:pendant_of_wisdom"
+  }
+}
