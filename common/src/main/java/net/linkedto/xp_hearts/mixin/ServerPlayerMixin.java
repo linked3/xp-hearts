@@ -79,7 +79,7 @@ public abstract class ServerPlayerMixin {
                 xpHearts$amuletRetries = 0;
             } else if (++xpHearts$amuletRetries > 100) {
                 if (!player.getInventory().add(xpHearts$pendingAmulet)) {
-                    player.drop(xpHearts$pendingAmulet, false);
+                    player.drop(xpHearts$pendingAmulet, false, net.minecraft.util.Prediction.SERVER_ONLY);
                 }
                 xpHearts$pendingAmulet = null;
                 xpHearts$amuletRetries = 0;
