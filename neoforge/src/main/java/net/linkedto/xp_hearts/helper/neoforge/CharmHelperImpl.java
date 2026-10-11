@@ -2,17 +2,25 @@ package net.linkedto.xp_hearts.helper.neoforge;
 
 import net.linkedto.xp_hearts.item.AmuletOfKeepingItem;
 import net.linkedto.xp_hearts.item.AmuletOfWisdomItem;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.common.DropRule;
 import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import java.util.Optional;
 
 public class CharmHelperImpl {
     public static void registerCharmAsCurio(Item charmItem) {
-        CuriosApi.registerCurio(charmItem, new ICurioItem() {});
+        CuriosApi.registerCurio(charmItem, new ICurioItem() {
+            @Override
+            public DropRule getDropRule(SlotContext slotContext, DamageSource source, boolean recentlyHit, ItemStack stack) {
+                return DropRule.ALWAYS_KEEP;
+            }
+        });
     }
 
     public static boolean hasCharmOfKeeping(LivingEntity entity) {
