@@ -7,13 +7,13 @@
   ],
   "key": {
     "g": {
-      "id": "minecraft:gold_ingot"
+      "item": "minecraft:gold_ingot"
     },
     "l": {
-      "id": "minecraft:lapis_lazuli"
+      "item": "minecraft:lapis_lazuli"
     },
     "e": {
-      "id": "minecraft:echo_shard"
+      "item": "minecraft:echo_shard"
     }
   },
   "result": {

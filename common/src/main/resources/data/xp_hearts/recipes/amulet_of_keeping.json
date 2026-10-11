@@ -7,10 +7,10 @@
   ],
   "key": {
     "i": {
-      "id": "minecraft:iron_nugget"
+      "item": "minecraft:iron_nugget"
     },
     "p": {
-      "id": "xp_hearts:pendant_of_keeping"
+      "item": "xp_hearts:pendant_of_keeping"
     }
   },
   "result": {
