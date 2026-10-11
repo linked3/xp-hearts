@@ -7,7 +7,7 @@ modId = "xp_hearts"
 version = "${version}"
 displayName = "XP Hearts"
 authors = "linkedto"
-iconFile = "assets/xp_hearts/icon.png"
+logoFile = "assets/xp_hearts/icon.png"
 description = '''
 Amulets that keep your items or XP on death.
 '''
