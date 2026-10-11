@@ -40,13 +40,10 @@ public abstract class ServerPlayerMixin {
         if (hasKeeping) {
             var newInv = newPlayer.getInventory();
             var oldInv = oldPlayer.getInventory();
-            for (int i = 0; i < newInv.items.size(); i++) {
-                newInv.items.set(i, oldInv.items.get(i).copy());
+            int size = oldInv.getContainerSize();
+            for (int i = 0; i < size; i++) {
+                newInv.setItem(i, oldInv.getItem(i).copy());
             }
-            for (int i = 0; i < newInv.armor.size(); i++) {
-                newInv.armor.set(i, oldInv.armor.get(i).copy());
-            }
-            newInv.offhand.set(0, oldInv.offhand.get(0).copy());
         }
 
         if (hasWisdom) {

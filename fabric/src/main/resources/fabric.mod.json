@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "xp_hearts",
   "version": "${version}",
-  "name": "xp_hearts",
-  "description": "XP based health and item keeps on death using amulets.",
+  "name": "XP Hearts",
+  "description": "Amulets that keep your items or XP on death.",
   "authors": [
     "linkedto"
   ],
   "contact": {
-    "homepage": "https://github.com/linked3/linked-hearts"
+    "homepage": "https://github.com/linked3/xp-hearts"
   },
   "license": "GPL-3.0",
   "icon": "assets/xp_hearts/icon.png",
@@ -25,12 +25,12 @@
     "xp_hearts.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.19.5",
-    "minecraft": ">=1.21.1 <1.21.2",
-    "java": ">=21",
-    "architectury": ">=13.0.11 <14",
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "architectury": ">=21.0.6",
     "fabric-api": "*",
-    "trinkets": ">=3.10.0 <4"
+    "trinkets_updated": "*"
   },
   "suggests": {
     "cloth-config": "*",

@@ -2,14 +2,14 @@ package net.linkedto.xp_hearts.handler;
 
 import net.linkedto.xp_hearts.XpHearts;
 import net.linkedto.xp_hearts.config.XpHeartsConfig;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class XpHeartHandler {
-    private static final ResourceLocation BONUS_HEALTH_ID = ResourceLocation.fromNamespaceAndPath(XpHearts.MOD_ID, "bonus_health");
+    private static final Identifier BONUS_HEALTH_ID = Identifier.fromNamespaceAndPath(XpHearts.MOD_ID, "bonus_health");
 
     public static void update(ServerPlayer player) {
         XpHeartsConfig config = XpHeartsConfig.get();

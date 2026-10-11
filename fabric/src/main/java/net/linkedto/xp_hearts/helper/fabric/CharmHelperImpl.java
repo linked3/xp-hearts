@@ -1,7 +1,10 @@
 package net.linkedto.xp_hearts.helper.fabric;
 
-import dev.emi.trinkets.api.Trinket;
-import dev.emi.trinkets.api.TrinketsApi;
+import eu.pb4.trinkets.api.SlotType;
+import eu.pb4.trinkets.api.TrinketAttachment;
+import eu.pb4.trinkets.api.TrinketInventory;
+import eu.pb4.trinkets.api.TrinketSlotAccess;
+import eu.pb4.trinkets.api.TrinketsApi;
 import net.linkedto.xp_hearts.item.AmuletOfKeepingItem;
 import net.linkedto.xp_hearts.item.AmuletOfWisdomItem;
 import net.minecraft.world.entity.LivingEntity;
@@ -13,45 +16,40 @@ import java.util.Optional;
 public class CharmHelperImpl {
 
     public static void registerCharmAsCurio(Item charmItem) {
-        TrinketsApi.registerTrinket(charmItem, new Trinket() {});
+        // Trinkets Updated is data-driven; equippability is defined by item tags.
     }
 
     public static boolean hasCharmOfKeeping(LivingEntity entity) {
-        var component = TrinketsApi.getTrinketComponent(entity).orElse(null);
-        if (component == null) return false;
-        return component.isEquipped(s -> s.getItem() instanceof AmuletOfKeepingItem);
+        return TrinketsApi.getAttachment(entity).isEquipped(s -> s.getItem() instanceof AmuletOfKeepingItem);
     }
 
     public static boolean hasCharmOfWisdom(LivingEntity entity) {
-        var component = TrinketsApi.getTrinketComponent(entity).orElse(null);
-        if (component == null) return false;
-        return component.isEquipped(s -> s.getItem() instanceof AmuletOfWisdomItem);
+        return TrinketsApi.getAttachment(entity).isEquipped(s -> s.getItem() instanceof AmuletOfWisdomItem);
     }
 
     public static Optional<ItemStack> getEquippedAmuletOfWisdom(LivingEntity entity) {
-        var component = TrinketsApi.getTrinketComponent(entity).orElse(null);
-        if (component == null) return Optional.empty();
-        for (var group : component.getInventory().values()) {
-            for (var inv : group.values()) {
-                for (int i = 0; i < inv.getContainerSize(); i++) {
-                    ItemStack stack = inv.getItem(i);
-                    if (stack.getItem() instanceof AmuletOfWisdomItem) {
-                        return Optional.of(stack.copy());
-                    }
-                }
-            }
-        }
-        return Optional.empty();
+        return TrinketsApi.getAttachment(entity)
+                .findFirst(s -> s.getItem() instanceof AmuletOfWisdomItem)
+                .map(access -> access.get().copy());
     }
 
     public static boolean equipAmuletOfWisdom(LivingEntity entity, ItemStack stack) {
-        var component = TrinketsApi.getTrinketComponent(entity).orElse(null);
-        if (component == null) return false;
-        var group = component.getInventory().get("chest");
-        if (group == null) return false;
-        var inv = group.get("necklace");
-        if (inv == null) return false;
-        inv.setItem(0, stack);
-        return true;
+        TrinketAttachment attachment = TrinketsApi.getAttachment(entity);
+        for (TrinketInventory inventory : attachment.getInventories().values()) {
+            for (int i = 0; i < inventory.getContainerSize(); i++) {
+                TrinketSlotAccess access = inventory.getSlotAccess(i);
+                if (access != null && isNecklace(access.slotType())) {
+                    return access.set(stack);
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean isNecklace(SlotType slotType) {
+        if (slotType == null || slotType.getId() == null) {
+            return false;
+        }
+        return slotType.getId().contains("necklace");
     }
 }

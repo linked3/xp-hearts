@@ -41,11 +41,11 @@ public abstract class LivingEntityMixin {
     }
 
     @Inject(
-        method = "dropExperience(Lnet/minecraft/world/entity/Entity;)V",
+        method = "dropExperience(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/Entity;)V",
         at = @At("HEAD"),
         cancellable = true
     )
-    private void onDropExperience(Entity killer, CallbackInfo ci) {
+    private void onDropExperience(ServerLevel level, Entity killer, CallbackInfo ci) {
         if (!((Object)this instanceof ServerPlayer player)) return;
 
         if (DeathHandler.WISDOM_ACTIVE.contains(player.getUUID())) {

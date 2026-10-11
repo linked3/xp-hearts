@@ -1,6 +1,7 @@
 package net.linkedto.xp_hearts.config;
 
 import dev.architectury.platform.Platform;
+import dev.architectury.platform.client.ConfigurationScreenRegistry;
 import net.linkedto.xp_hearts.XpHearts;
 import net.minecraft.client.gui.screens.Screen;
 
@@ -29,7 +30,7 @@ public class XpHeartsConfig {
         if (!isClothConfigAvailable()) {
             return;
         }
-        Platform.getMod(XpHearts.MOD_ID).registerConfigurationScreen(XpHeartsConfig::createConfigScreen);
+        ConfigurationScreenRegistry.register(Platform.getMod(XpHearts.MOD_ID), XpHeartsConfig::createConfigScreen);
     }
 
     private static Screen createConfigScreen(Screen parent) {

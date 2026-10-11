@@ -1,52 +1,44 @@
 modLoader = "javafml"
-loaderVersion = "[2,)"
-#issueTrackerURL = ""
-license = "GNU GPL 3.0"
+loaderVersion = "[1,)"
+license = "GPL-3.0"
 
 [[mods]]
 modId = "xp_hearts"
 version = "${version}"
-displayName = "xp_hearts"
+displayName = "XP Hearts"
 authors = "linkedto"
-description = '''
-XP based health and item keeps on death using amulets.
-'''
 logoFile = "assets/xp_hearts/icon.png"
+description = '''
+Amulets that keep your items or XP on death.
+'''
+
+[mixins]
+config = "xp_hearts.mixins.json"
 
 [[dependencies.xp_hearts]]
 modId = "neoforge"
-type = "required"
-versionRange = "[21.1,21.2)"
+mandatory = true
+versionRange = "[26.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.xp_hearts]]
 modId = "minecraft"
-type = "required"
-versionRange = "[1.21.1,1.21.2)"
+mandatory = true
+versionRange = "[26.2,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.xp_hearts]]
 modId = "architectury"
-type = "required"
-versionRange = "[13.0.11,14)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies.xp_hearts]]
-modId = "curios"
-type = "required"
-versionRange = "[9.2.0,10)"
+mandatory = true
+versionRange = "[21.0.6,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.xp_hearts]]
-modId = "cloth_config"
-type = "optional"
-versionRange = "[15.0.0,16)"
+modId = "curios"
+mandatory = true
+versionRange = "[16.0.0,)"
 ordering = "AFTER"
-side = "CLIENT"
-
-[[mixins]]
-config = "xp_hearts.mixins.json"
+side = "BOTH"

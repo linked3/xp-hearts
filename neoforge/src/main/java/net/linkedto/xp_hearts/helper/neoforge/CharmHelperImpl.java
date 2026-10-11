@@ -30,24 +30,18 @@ public class CharmHelperImpl {
     public static Optional<ItemStack> getEquippedAmuletOfWisdom(LivingEntity entity) {
         var handler = CuriosApi.getCuriosInventory(entity).orElse(null);
         if (handler == null) return Optional.empty();
-        for (var entry : handler.getCurios().entrySet()) {
-            var stacks = entry.getValue().getStacks();
-            for (int i = 0; i < stacks.getSlots(); i++) {
-                ItemStack stack = stacks.getStackInSlot(i);
-                if (stack.getItem() instanceof AmuletOfWisdomItem) {
-                    return Optional.of(stack.copy());
-                }
-            }
-        }
-        return Optional.empty();
+        return handler.findFirstCurio(s -> s.getItem() instanceof AmuletOfWisdomItem)
+                .map(result -> result.stack().copy());
     }
 
     public static boolean equipAmuletOfWisdom(LivingEntity entity, ItemStack stack) {
         var handler = CuriosApi.getCuriosInventory(entity).orElse(null);
         if (handler == null) return false;
-        var slotHandler = handler.getCurios().get("necklace");
-        if (slotHandler == null) return false;
-        slotHandler.getStacks().setStackInSlot(0, stack);
+        var stacksHandler = handler.getStacksHandler("necklace").orElse(null);
+        if (stacksHandler == null) return false;
+        var stacks = stacksHandler.getStacks();
+        if (stacks.getSlots() < 1) return false;
+        stacks.setStackInSlot(0, stack);
         return true;
     }
 }
