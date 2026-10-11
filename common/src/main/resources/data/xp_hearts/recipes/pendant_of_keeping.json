@@ -7,13 +7,13 @@
   ],
   "key": {
     "o": {
-      "id": "minecraft:obsidian"
+      "item": "minecraft:obsidian"
     },
     "c": {
-      "id": "minecraft:crying_obsidian"
+      "item": "minecraft:crying_obsidian"
     },
     "e": {
-      "id": "minecraft:ender_eye"
+      "item": "minecraft:ender_eye"
     }
   },
   "result": {

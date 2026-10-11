@@ -7,10 +7,10 @@
   ],
   "key": {
     "b": {
-      "id": "minecraft:blue_wool"
+      "item": "minecraft:blue_wool"
     },
     "p": {
-      "id": "xp_hearts:pendant_of_wisdom"
+      "item": "xp_hearts:pendant_of_wisdom"
     }
   },
   "result": {
