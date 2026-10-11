@@ -18,27 +18,27 @@ config = "xp_hearts.mixins.json"
 [[dependencies.xp_hearts]]
 modId = "neoforge"
 mandatory = true
-versionRange = "[26.2,)"
+versionRange = "[26.3,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.xp_hearts]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[26.2,)"
+versionRange = "[26.3,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.xp_hearts]]
 modId = "architectury"
 mandatory = true
-versionRange = "[21.0.6,)"
+versionRange = "[22.0.3,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.xp_hearts]]
 modId = "curios"
 mandatory = true
-versionRange = "[16.0.0,)"
+versionRange = "[17.0.0,)"
 ordering = "AFTER"
 side = "BOTH"
