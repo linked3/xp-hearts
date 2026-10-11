@@ -10,6 +10,8 @@ import net.linkedto.xp_hearts.item.PendantOfKeepingItem;
 import net.linkedto.xp_hearts.item.PendantOfWisdomItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,6 +20,10 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(XpHearts.MOD_ID, Registries.ITEM);
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(XpHearts.MOD_ID, Registries.CREATIVE_MODE_TAB);
 
+    private static ResourceKey<Item> key(String name) {
+        return ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(XpHearts.MOD_ID, name));
+    }
+
     public static final RegistrySupplier<CreativeModeTab> XP_HEARTS_TAB = TABS.register("xp_hearts", () ->
             CreativeTabRegistry.create(
                     Component.translatable("category." + XpHearts.MOD_ID),
@@ -25,16 +31,16 @@ public class ModItems {
             ));
 
     public static final RegistrySupplier<AmuletOfKeepingItem> AMULET_OF_KEEPING = ITEMS.register("amulet_of_keeping", () ->
-            new AmuletOfKeepingItem(new Item.Properties().stacksTo(1).arch$tab(XP_HEARTS_TAB)));
+            new AmuletOfKeepingItem(new Item.Properties().stacksTo(1).setId(key("amulet_of_keeping")).arch$tab(XP_HEARTS_TAB)));
 
     public static final RegistrySupplier<AmuletOfWisdomItem> AMULET_OF_WISDOM = ITEMS.register("amulet_of_wisdom", () ->
-            new AmuletOfWisdomItem(new Item.Properties().stacksTo(1).arch$tab(XP_HEARTS_TAB)));
+            new AmuletOfWisdomItem(new Item.Properties().stacksTo(1).setId(key("amulet_of_wisdom")).arch$tab(XP_HEARTS_TAB)));
 
     public static final RegistrySupplier<PendantOfKeepingItem> PENDANT_OF_KEEPING = ITEMS.register("pendant_of_keeping", () ->
-            new PendantOfKeepingItem(new Item.Properties().stacksTo(64).arch$tab(XP_HEARTS_TAB)));
+            new PendantOfKeepingItem(new Item.Properties().stacksTo(64).setId(key("pendant_of_keeping")).arch$tab(XP_HEARTS_TAB)));
 
     public static final RegistrySupplier<PendantOfWisdomItem> PENDANT_OF_WISDOM = ITEMS.register("pendant_of_wisdom", () ->
-            new PendantOfWisdomItem(new Item.Properties().stacksTo(64).arch$tab(XP_HEARTS_TAB)));
+            new PendantOfWisdomItem(new Item.Properties().stacksTo(64).setId(key("pendant_of_wisdom")).arch$tab(XP_HEARTS_TAB)));
 
     public static void register() {
         TABS.register();

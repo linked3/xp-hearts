@@ -7,12 +7,12 @@ modId = "xp_hearts"
 version = "${version}"
 displayName = "XP Hearts"
 authors = "linkedto"
-logoFile = "assets/xp_hearts/icon.png"
+iconFile = "assets/xp_hearts/icon.png"
 description = '''
 Amulets that keep your items or XP on death.
 '''
 
-[mixins]
+[[mixins]]
 config = "xp_hearts.mixins.json"
 
 [[dependencies.xp_hearts]]
