@@ -1,6 +1,8 @@
 package net.linkedto.xp_hearts.helper.fabric;
 
+import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.Trinket;
+import dev.emi.trinkets.api.TrinketEnums;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.linkedto.xp_hearts.item.AmuletOfKeepingItem;
 import net.linkedto.xp_hearts.item.AmuletOfWisdomItem;
@@ -13,7 +15,12 @@ import java.util.Optional;
 public class CharmHelperImpl {
 
     public static void registerCharmAsCurio(Item charmItem) {
-        TrinketsApi.registerTrinket(charmItem, new Trinket() {});
+        TrinketsApi.registerTrinket(charmItem, new Trinket() {
+            @Override
+            public TrinketEnums.DropRule getDropRule(ItemStack stack, SlotReference slot, LivingEntity entity) {
+                return TrinketEnums.DropRule.KEEP;
+            }
+        });
     }
 
     public static boolean hasCharmOfKeeping(LivingEntity entity) {
