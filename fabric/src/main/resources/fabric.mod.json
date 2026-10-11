@@ -3,7 +3,7 @@
   "id": "xp_hearts",
   "version": "${version}",
   "name": "xp_hearts",
-  "description": "XP based health and item keeps on death using amulets.",
+  "description": "Amulets that keep your items or XP on death.",
   "authors": [
     "linkedto"
   ],

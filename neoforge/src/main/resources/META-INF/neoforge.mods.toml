@@ -9,7 +9,7 @@ version = "${version}"
 displayName = "xp_hearts"
 authors = "linkedto"
 description = '''
-XP based health and item keeps on death using amulets.
+Amulets that keep your items or XP on death.
 '''
 logoFile = "assets/xp_hearts/icon.png"
 
