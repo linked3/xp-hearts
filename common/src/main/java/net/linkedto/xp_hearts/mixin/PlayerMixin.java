@@ -11,11 +11,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class PlayerMixin {
 
     @Inject(
-        method = "getBaseExperienceReward()I",
-        at = @At("HEAD"),
+        method = "getExperienceReward",
+        at = @At("RETURN"),
         cancellable = true
     )
-    private void uncapXpDrop(CallbackInfoReturnable<Integer> cir) {
+    private void uncapXpDrop(Player player, CallbackInfoReturnable<Integer> cir) {
         if (!((Object)this instanceof ServerPlayer)) return;
         cir.setReturnValue(((ServerPlayer)(Object)this).experienceLevel * 7);
     }
